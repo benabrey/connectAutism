@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Connect Autism | Behaviour Consultation, Intervention &amp; Training
+    </title>
+    <meta
+      name="description"
+      content="Connect Autism provides behaviour consultation, behaviour intervention, and training services for families in British Columbia."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- ===== NAV ===== -->
+    <nav class="nav">
+      <a href="#" class="nav-logo">
+        <img src="images/connectlogo.png" alt="Connect Autism" />
+      </a>
+      <button
+        class="nav-toggle"
+        aria-label="Toggle menu"
+        onclick="document.querySelector('.nav-links').classList.toggle('open')"
+      >
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#resources">Resources</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li>
+          <a
+            href="#"
+            onclick="
+              event.preventDefault();
+              toggleTeam();
+            "
+            >Meet the Team</a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+      <img src="images/Hero.jpg" alt="The team!" class="hero-image" />
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1>Behaviour Consultation, Behaviour Intervention, &amp; Training</h1>
+      </div>
+    </section>
+
+    <!-- ===== ABOUT / PURPOSE ===== -->
+    <section class="section about" id="about">
+      <h2 class="section-heading">
+        Behaviour Consultation, Behaviour Intervention, &amp; Training
+      </h2>
+      <div class="about-content">
+        <h3>Purpose of Consultation</h3>
+        <p>
+          Behaviour analysis is a research-based, scientific approach to
+          understanding and supporting human behaviour. It is founded on the
+          principle that behaviour is learned over time and is influenced by
+          direct and indirect consequences within an individual's environment.
+        </p>
+        <p>
+          As Behaviour Consultants and Interventionists, we do not judge
+          children's behaviour. Instead, we seek to understand the environmental
+          factors that may be influencing the behaviour, identify its function,
+          and develop strategies to shape and support positive behavioural
+          change.
+        </p>
+        <p>
+          Our goal is to reduce stress and anxiety within family environments
+          while fostering positive relationships among children, parents,
+          siblings, caregivers, teachers, educational assistants, and others who
+          interact with the child.
+        </p>
+        <p>
+          We are committed to supporting families in achieving the goals we
+          establish together. However, we cannot guarantee specific outcomes or
+          predict future results, as many variables influence a child's
+          development and progress.
+        </p>
+        <p>
+          Working collaboratively as a team, we will identify behavioural goals,
+          monitor and evaluate progress, and adjust intervention strategies as
+          needed.
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== RESOURCES ===== -->
+    <section class="resources" id="resources">
+      <div class="resources-inner">
+        <h2 class="section-heading">Resources</h2>
+        <div class="resources-grid">
+          <div class="resource-card">
+            <h3>
+              Registry of Autism Service Providers (RASP) – Government of
+              British Columbia
+            </h3>
+            <p>
+              The Registry of Autism Service Providers (RASP) in British
+              Columbia helps families find qualified professionals such as
+              behaviour consultants, speech-language pathologists, occupational
+              therapists, and physical therapists who can provide autism-related
+              services funded through BC's Autism Funding program.
+            </p>
+            <a href="#" class="btn">Learn More</a>
+          </div>
+
+          <div class="resource-card">
+            <h3>
+              Toilet Training for Everyone – ACT Autism Community Training
+            </h3>
+            <p>
+              This video series by Dr. Pat Mirenda provides practical strategies
+              and behavioural approaches for toilet training children, including
+              children with an ASD diagnosis. The resource covers myths about
+              toilet training, rapid toilet training methods, less intensive
+              approaches, and solutions to common toileting challenges.
+            </p>
+            <a href="#" class="btn">Learn More</a>
+          </div>
+
+          <div class="resource-card">
+            <h3>
+              Justification for Equipment and Supplies Form – Government of
+              British Columbia
+            </h3>
+            <p>
+              A Justification for Equipment (JFE) is a BC Autism Funding form
+              used to request approval for equipment and supplies related to a
+              child's autism intervention program. The form requires information
+              about the recommended items, their costs, developmental goals they
+              support, and professional justification explaining how the items
+              will benefit the child's therapy and development.
+            </p>
+            <a href="#" class="btn">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section class="section" id="contact">
+      <h2 class="section-heading">Connect with Us</h2>
+      <div class="contact-grid">
+        <div>
+          <h3
+            style="
+              font-family: &quot;Inter&quot;, sans-serif;
+              font-size: 1.1rem;
+              margin-bottom: 1.2rem;
+            "
+          >
+            Connect with Us
+          </h3>
+          <form
+            class="contact-form"
+            onsubmit="
+              event.preventDefault();
+              alert('Form submitted! Hook this up to your backend.');
+            "
+          >
+            <input type="text" name="name" placeholder="Name" required />
+            <input type="email" name="email" placeholder="Email *" required />
+            <textarea name="message" placeholder="Message"></textarea>
+            <button
+              type="submit"
+              class="btn"
+              style="width: 100%; border-radius: 50px"
+            >
+              Send
+            </button>
+          </form>
+        </div>
+        <div class="contact-info">
+          <h3>We would love to connect with you!</h3>
+          <p>
+            We would love to connect with you! Please send us a message with
+            your contact information with the best day and time to connect with
+            you. We offer a 15 minute complimentary consultation session to see
+            how we can support you and your family.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+      <span>&copy; 2026 Connect Autism - All Rights Reserved.</span>
+      <span><a href="https://connectautism.ca">connectautism.ca</a></span>
+    </footer>
+
+    <!-- ===== TEAM SIDEBAR ===== -->
+    <div class="team-overlay" onclick="toggleTeam()"></div>
+    <aside class="team-sidebar">
+      <div class="team-sidebar-header">
+        <h2>Meet the Team</h2>
+        <button class="team-close" onclick="toggleTeam()" aria-label="Close">
+          &times;
+        </button>
+      </div>
+
+      <!-- TEAM MEMBERS — duplicate .team-member blocks as needed -->
+      <div class="team-member">
+        <div class="team-member-photo">
+          <img src="images/bonnie.jpg" alt="Bonnie McGill" />
+        </div>
+        <h3>Bonnie McGill, M.Ed. PhD. Candidate</h3>
+        <div class="role">Behaviour Consultant</div>
+        <p>
+          Bonnie hold a Bachelor of Arts degree in Psychology from the
+          University of British Columbia, a Master of Education in Curriculum
+          and Instruction in Applied Behaviour Analysis (ABA) from Arizona State
+          University, and she is currently working on her PhD in Organizational
+          Leadership from Adler University. Her education and professional
+          practice are grounded in the principles of Applied Behaviour Analysis
+          (ABA), and applying them in a Natural Environment Teaching (NET) by
+          using positive reinforcement into a child's everyday play, routines,
+          and natural surroundings to build functional social, communication,
+          and daily living skills. Bonnie's work focuses on educating, training,
+          and mentoring parents to empower them in developing healthy,
+          meaningful relationships with their children who have been diagnosed
+          with Autism Spectrum Disorder (ASD) and/or other neurodivergent
+          conditions. When she is not in the practice, she enjoys road cycling,
+          ope water swimming, and being with her Labradoodle, Poppy.
+        </p>
+      </div>
+
+      <div class="team-member">
+        <div class="team-member-photo">
+          <img src="images/sydney.jpg" alt="Sydney Wheeler" />
+        </div>
+        <h3>Sydney Wheeler, B.Sc</h3>
+        <div class="role">Behaviour Interventionist</div>
+        <p>
+          Sydney has over three years working as a one-on-one behaviour
+          interventionist and is also a certified education assistant (CEA).
+          Sydney has always been passionate about working with young children.
+          She specially value working as a team that works closely with families
+          to find ways how we can best support their children. When not working,
+          Sydney loves to be outside, running, long walks, and biking. She also
+          loves sitting down with a good book.
+        </p>
+      </div>
+
+      <div class="team-member">
+        <div class="team-member-photo">
+          <img src="images/erin.jpg" alt="Erin Bradford, BA" />
+        </div>
+        <h3>Erin Bradford, BA</h3>
+        <div class="role">Behaviour Interventionist</div>
+        <p>
+          Our team consists of certified behaviour analysts and interventionists
+          experienced in supporting children with diverse needs. We are
+          committed to ongoing education and tailored support, ensuring each
+          child receives the most effective care possible.
+        </p>
+      </div>
+
+      <div class="team-member">
+        <div class="team-member-photo">
+          <img src="images/ellesha.jpg" alt="Ellesha Miller" />
+        </div>
+        <h3>Ellesha Miller</h3>
+        <div class="role">Behaviour Interventionist</div>
+        <p>
+          Education: In my 3rd year of completing my BA Experience: Five years
+          as a one-on-one Behaviour Interventionist I love working with Families
+          and enjoy the challenging days as much as the breezy days. I am so
+          proud when I see my kids grow and succeed! Outside of work I love to
+          read, be creative, and cooking to feed whoever! I have two kids of my
+          own and I love to go on adventures with them as well!
+        </p>
+      </div>
+
+      <div class="team-member">
+        <div class="team-member-photo">
+          <img src="images/megan.jpg" alt="Megan Boon" />
+        </div>
+        <h3>Megan Boon</h3>
+        <div class="role">Behaviour Interventionist</div>
+        <p>
+          Education: Bachelor of human Kinetics with a minor in psychology
+          Experience: 1 Year as a one-on-one behaviour Interventionist, with
+          previous experience working in a school division supporting children
+          with diverse needs. I've always been passionate about working with
+          children and helping them reach their full potential! seeing their
+          growth over time and being part of a team that supports families is
+          incredibly rewarding for me! When I'm outside of work I love to be
+          outside, playing sports, reading, doing puzzles and spending time with
+          the people I love most!
+        </p>
+      </div>
+    </aside>
+
+    <script>
+      function toggleTeam() {
+        document.querySelector(".team-sidebar").classList.toggle("open");
+        document.querySelector(".team-overlay").classList.toggle("open");
+        document.body.style.overflow = document
+          .querySelector(".team-sidebar")
+          .classList.contains("open")
+          ? "hidden"
+          : "";
+      }
+
+      // Close mobile nav when a link is clicked
+      document.querySelectorAll(".nav-links a").forEach((link) => {
+        link.addEventListener("click", () => {
+          document.querySelector(".nav-links").classList.remove("open");
+        });
+      });
+    </script>
+  </body>
+</html>
