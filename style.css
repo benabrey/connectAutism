@@ -217,18 +217,14 @@ img.hero-image {
    ────────────────────────────── */
 
 .about-content {
-  max-width: 900px;
+  max-width: 720px;
   margin: 0 auto;
 }
 
-.about-content h3 {
-  font-size: 1.3rem;
-  margin-bottom: 1rem;
-}
-
 .about-content p {
-  margin-bottom: 1rem;
   font-size: 0.95rem;
+  line-height: 1.85;
+  margin-bottom: 1.25rem;
 }
 
 /* ──────────────────────────────
@@ -248,71 +244,130 @@ img.hero-image {
   padding: 0 2rem;
 }
 
-.resources-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+.accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.accordion-item {
+  border: 1px solid var(--border);
+  border-bottom: none;
+  background: var(--cream);
+  transition: background 0.2s;
+}
+
+.accordion-item:first-child {
+  border-radius: 6px 6px 0 0;
+}
+
+.accordion-item:last-child {
+  border-bottom: 1px solid var(--border);
+  border-radius: 0 0 6px 6px;
+}
+
+.accordion-item[open] {
+  background: #fff;
+}
+
+.accordion-item summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.5rem;
+  cursor: pointer;
+  list-style: none;
   gap: 1.5rem;
 }
 
-.resource-card {
-  background: var(--cream);
-  padding: 2rem 1.5rem;
-  text-align: center;
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  display: flex;
-  flex-direction: column;
-  transition: box-shadow 0.2s;
+.accordion-item summary::-webkit-details-marker {
+  display: none;
 }
 
-.resource-card:hover {
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+.accordion-item summary::marker {
+  display: none;
+  content: "";
 }
 
-.resource-card h3 {
-  font-size: 1.1rem;
-  margin-bottom: 1rem;
+.accordion-title {
+  font-family: "Playfair Display", serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--green-dark);
+  line-height: 1.4;
 }
 
-.resource-card p {
-  font-size: 0.9rem;
-  flex: 1;
-  margin-bottom: 1.5rem;
-  line-height: 1.6;
-}
-
-.btn {
-  display: inline-block;
-  padding: 0.75rem 2rem;
+.accordion-icon {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
   background: var(--green-dark);
-  color: #fff;
-  font-family: "Inter", sans-serif;
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  border: none;
-  border-radius: 50px;
-  cursor: pointer;
-  transition: background 0.2s;
-  text-decoration: none;
-  align-self: center;
+  position: relative;
+  transition:
+    transform 0.25s ease,
+    background 0.2s;
 }
 
-.btn:hover {
+.accordion-icon::before,
+.accordion-icon::after {
+  content: "";
+  position: absolute;
+  background: #fff;
+  border-radius: 1px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.accordion-icon::before {
+  width: 12px;
+  height: 2px;
+}
+
+.accordion-icon::after {
+  width: 2px;
+  height: 12px;
+  transition: transform 0.25s ease;
+}
+
+.accordion-item[open] .accordion-icon {
   background: var(--green-mid);
-  text-decoration: none;
+  transform: rotate(45deg);
+}
+
+.accordion-item summary:hover .accordion-icon {
+  background: var(--green-mid);
+}
+
+.accordion-body {
+  padding: 0 1.5rem 1.5rem;
+}
+
+.accordion-body p {
+  font-size: 0.92rem;
+  line-height: 1.7;
+  margin-bottom: 1.25rem;
 }
 
 /* ──────────────────────────────
    CONTACT
    ────────────────────────────── */
 
-.contact-grid {
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 3rem;
-  align-items: start;
+.contact-layout {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-text {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.contact-text p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--text-body);
 }
 
 .contact-form {
@@ -329,32 +384,41 @@ img.hero-image {
   font-size: 0.95rem;
   color: var(--text-body);
   border: 1px solid var(--border);
-  border-radius: 4px;
-  background: var(--cream-light);
-  transition:
-    border-color 0.2s,
-    background 0.2s;
+  border-radius: 6px;
+  background: #fff;
+  transition: border-color 0.2s;
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
   outline: none;
   border-color: var(--green-mid);
-  background: #fff;
 }
 
 .contact-form textarea {
-  min-height: 150px;
+  min-height: 140px;
   resize: vertical;
 }
 
-.contact-info h3 {
-  font-size: 1.3rem;
-  margin-bottom: 1rem;
+.btn-submit {
+  display: block;
+  width: 100%;
+  padding: 0.85rem;
+  background: var(--green-dark);
+  color: #fff;
+  font-family: "Inter", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background 0.2s;
 }
 
-.contact-info p {
-  font-size: 0.95rem;
+.btn-submit:hover {
+  background: var(--green-mid);
 }
 
 /* ──────────────────────────────
